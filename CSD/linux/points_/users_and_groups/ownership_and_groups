@@ -1,0 +1,12 @@
+---------
+Changing an owner of a file
+---------
+
+chown baker index.php [requires root permission]
+
+
+---------
+Changing group of a file
+---------
+
+chgrp groupname filename
