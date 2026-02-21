@@ -1,0 +1,25 @@
+
+sudo -s → gives a root shell but keeps your environment mostly intact
+
+sudo -i → root shell with root’s environment
+
+
+$ echo $HOME
+/home/sharky
+$ sudo -s
+# echo $HOME
+/home/sharky
+$ sudo -i
+# echo $HOME
+/root 
+
+
+username ALL=(ALL:ALL) ALL
+
+The rule applies to username
+
+Works on any host
+
+Can run commands as any user and any group
+
+Can run any command

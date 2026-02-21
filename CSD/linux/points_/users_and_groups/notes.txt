@@ -1,0 +1,45 @@
+
+
+drwxr-xr-x root root ...
+
+-------------
+dr: directory
+w: writable	-> drwx [first part]
+x: executable
+r: read
+-------------
+
+-------------
+xr [permissions of group]
+-------------
+
+-------------
+x [other's permissions]
+-------------
+
+===
+Types of groups
+
+user group [standard user accounts]
+admin group [admin user accounts]
+===
+
+===
+admin group [etc/sudoers]
+===
+
+===
+/etc/group (not /etc/groups) is a core Linux file that defines groups on the system and their members.
+
+group_name:password_placeholder:GID:user_list
+docker:x:1001:marcus,sharky
+
+---
+group_name	name of the group (sudo, docker)
+password_placeholder	almost always x — real password (for group login) is rarely used
+GID	numeric group ID
+user_list	comma-separated users who are members
+---
+
+===
+

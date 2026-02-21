@@ -1,0 +1,18 @@
+---
+1. What is a shell in Linux?
+---
+A shell is a command interpreter.
+
+It is the program that:
+
+Takes what you type (commands),
+
+Interprets them,
+
+Asks the Linux kernel to execute them,
+
+And shows you the output.
+
+===
+
+User → Shell → Kernel → Hardware

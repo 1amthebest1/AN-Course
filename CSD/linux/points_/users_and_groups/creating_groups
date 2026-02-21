@@ -1,0 +1,33 @@
+
+-------
+creating a group
+-------
+
+groupadd goonerz
+
+-------
+adding a user to a group
+-------
+
+usermod -G goonerz baker
+
+-------
+removing a user from a group
+-------
+
+gpasswd -d baker goonerz
+
+
+-------
+removing a group
+-------
+
+groupdel goonerz
+
+========
+Concept	What it means	Example
+Primary group		One default group; used for new files	gid=1001(marcus)
+Secondary groups	Extra groups a user belongs to; grants extra permissions, like sudo, docker etc.
+========
+
+

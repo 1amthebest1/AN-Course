@@ -1,0 +1,135 @@
+sys-admins stay in the etc/ :O .
+
+cd ~, means go to home.
+
+/home is actual directory, where it has user home directories.
+
+/home/sharky
+/home/marcus 
+
+and so on.
+
+rmdir [removes dir]
+
+rm [removes file]
+
+---
+
+-l in ls means detailed list, show perms, when was it made and so on.
+
+-h shows file size in KB.
+
+---
+
+sudo -i, can be used to switch to root, iirc, you can do su [username]
+
+---
+
+mv can be used to rename files as well.
+
+---
+
+tar -cf filename.tar ~/Documents [zips the files in Documents, in filename.tar]
+
+---
+
+tar -czf filename.tat.gz ~/Documents [compress and zip]
+
+---
+
+tar -czf filename.tar.gz ~/Documents
+
+This command creates a compressed archive of your Documents directory.
+Piece by piece
+tar
+
+Stands for tape archive (old name, still used).
+It bundles many files/directories into one archive file.
+
+By itself, tar does NOT compress — it just packages.
+-c → create
+
+Create a new archive.
+
+Without -c, tar won’t know you want to make one.
+-z → gzip compression
+
+Compress the archive using gzip.
+
+So:
+
+    .tar = archive
+
+    .gz = gzip compression
+    Together:
+
+    .tar.gz or .tgz
+
+-f filename.tar.gz → file name
+
+Specify the output file.
+
+Important:
+Without -f, tar will try to write to stdout (terminal), which is chaos.
+
+So this means:
+
+    Name the output archive filename.tar.gz
+
+~/Documents
+
+This is the source directory you want to archive.
+
+~ = your home directory
+So:
+
+~/Documents = /home/youruser/Documents
+
+Tar will:
+
+    take everything inside Documents
+
+    put it into filename.tar.gz
+
+    compress it
+
+What actually happens
+
+Conceptually:
+
+Documents/
+ ├── file1.txt
+ ├── file2.pdf
+ └── notes/
+
+becomes:
+
+filename.tar.gz
+
+Which contains the whole structure inside.
+Common mistakes (skeptical mode)
+
+Your command has a typo:
+
+filename.tat.gz
+
+should be:
+
+filename.tar.gz
+
+If you literally run:
+
+tar -czf filename.tat.gz ~/Documents
+
+it will still work, but you’ve just named it wrong. Extensions matter for humans, not tar.
+To extract it later
+
+tar -xzf filename.tar.gz
+
+Where:
+
+    -x = extract
+
+    -z = gunzip
+
+    -f = file

@@ -1,0 +1,55 @@
+
+the * in /etc/shadow means, you cannot login to the system using that account.
+
+---
+
+useradd someUserName //used to create user.
+
+uesrdel //used to delete user.
+
+useradd -m // m flag creates user with home directory.
+
+useradd -s "/bin/bash" // gives bash access.
+
+The GECOS field (and the -c option in useradd) is just a human-readable comment or description for the user. It doesn’t affect passwords, permissions, or login—it’s purely for information like:
+
+passwd abdullah // allows you to set/change password for abdullah
+
+usermod -L abdullah // locks abdullah's account.
+
+The -L option means lock the user account.
+
+sudo usermod -L sharky
+
+
+What this actually does:
+
+It puts a ! in front of the user’s password hash in /etc/shadow.
+
+This makes the password invalid.
+
+Result: the user cannot log in with a password anymore.
+---
+
+usermod -U abdullah, unlocks the account
+
+---
+
+usermod -c "somethingnew" abdullah //this basically updates the value set by -c in useradd.
+
+---
+
+userdel -r abdullah // the -r also removes the home directory of that user.
+
+---
+
+sudo -i, will attempt to make your current user as root.
+
+---
+
+switch user do. 
+
+---
+
+The
+/var/log/auth.log file in Linux is a system log that contains all security-related events and authentication information, including both successful and failed login attempts. This log is a crucial resource for system administrators for security monitoring, auditing user activity, and troubleshooting authentication issues.
