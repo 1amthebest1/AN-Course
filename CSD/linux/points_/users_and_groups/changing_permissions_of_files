@@ -1,0 +1,37 @@
+=======
+
+chmod [change mod]
+
+u => user[owner]
+
+x => execute
+
+chmod u+x filename [give owner execute permission of that file].
+
+=======
+
+chmod g+x filename [give group execute permission of that file].
+
+=======
+
+chmod o+x filename gives [everyone the execute permissions on that file].
+
+=======
+
+They can be used together like
+
+chmod u+x, g+x, o+x filename [This gives, owner, group, and everyone else execute permissions on that file].
+
+=======
+
+Taking away privileges
+
+chmod u-x, g-x filename [takes, owner, and group execute permissions away].
+
+=======
+
+read = 4
+
+write = 2
+
+execute = 1

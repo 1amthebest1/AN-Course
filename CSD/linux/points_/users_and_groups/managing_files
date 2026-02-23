@@ -1,0 +1,34 @@
+
+cat something | more [This prints the file in small groups, allowing you to easily look through huge files].
+
+===
+
+cat -b [prints the file, with line numbers].
+
+===
+
+head fileName [it shows th beginning few lines of the file].
+
+===
+
+head -3 fileName [it shows the first 3 lines of the file].
+
+===
+
+tail fileName [it shows the end few[5] lines of the file, kind of like opposite of the head].
+
+===
+
+less fileName [thora thora karke dikhayega file ko :) ].
+
+===
+
+vi [opens an empty file]
+
+to exit the editor you write
+
+esc + :q
+
+===
+
+use :q! for force exit.
