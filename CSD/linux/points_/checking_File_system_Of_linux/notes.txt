@@ -1,0 +1,29 @@
+df [shows disk [hard-disk] space usage].
+
+==
+
+df -h [show file sizes in megabytes, and gigabytes].
+
+==
+
+df stands for disk free.
+
+==
+
+for checking permissions to the target files and directories.
+
+=====
+
+du [shows disk usage of files] has arguments like -s [summary], -h[which adds suffix of K] etc.
+
+=====
+
+unmounting removable media disks [usb]
+
+unmount /media/USBdrive.
+
+==
+
+forcing USB to unmount.
+
+unmount -f /media/USBdrive.
