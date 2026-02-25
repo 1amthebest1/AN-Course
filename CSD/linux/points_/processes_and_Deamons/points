@@ -1,0 +1,45 @@
+In Linux, a
+daemon is a computer program that runs continuously as a background process, independent of direct user interaction or a controlling terminal. They perform essential system tasks and services without a graphical interface, operating quietly behind the scenes from system startup until shutdown. 
+Key Characteristics
+
+    Background Execution: Daemons operate in the background, not in the foreground where users interact with programs via a terminal or GUI.
+    Independence: They are detached from any specific user session and the terminal that launched them, allowing them to continue running even after a user logs out.
+    System Services: Daemons provide vital services to the operating system or other applications, such as handling network connections, managing print jobs, or running scheduled tasks.
+    Naming Convention: Daemon process names typically end with the letter "d" (e.g., sshd, httpd, crond).
+    Parent Process: Once fully "daemonized," a daemon's parent process typically becomes the init process (PID 1), which manages the system's processes.
+    Event-Driven: They often wait in a dormant state for a specific event or request (e.g., an incoming network message, a scheduled time) and then wake up to handle the task. 
+
+
+=== 
+
+ps [shows processes]
+
+ps -e [show extended running processes]
+
+===
+
+top [shows running processes using most memory, and CPU]
+
+===
+
+PID [Process ID]
+
+USER [User running the process]
+
+PR [Priority]
+
+VIRT [Virtual Memory a process is using](in KB)
+
+RES [Physical Memory a process is using](in KB)
+
+SHR [Shared Memory a process is using]
+
+S [Sleep]
+
+R [Running]
+
+===
+
+kill PID
+
+

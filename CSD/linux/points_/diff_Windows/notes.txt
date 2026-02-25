@@ -1,0 +1,42 @@
+
+more control in shell.
+
+code is open.
+
+--
+
+# installing a package
+
+dpkg -i (installer name)
+
+# to uninstall
+
+dpkg -r (installer name)
+
+# installing advance package tools
+
+apt-get install (package name)
+
+# removing the package
+
+apt-get remove (package name)
+
+# installing RPM packages
+
+rpm -i installer.rpm
+
+# un-installing RPM packages
+
+rpm -e installer.rpm
+
+# yellow dog updater
+
+yum install (name of the package)
+
+yum remove (name of the package)
+
+# apropos
+
+its like a manual for linux
+
+for example: apropos network, will list commands that have the word network in their description, such as [ping, ifconfig, netstat]
