@@ -1,0 +1,39 @@
+--
+tr ' ' '\n'
+
+it takes spaces and replaces it into new lines 
+--
+
+tr <find> <replace>
+
+--
+
+xargs -l2
+
+it puts data in two columns if given a single column as input.
+
+--
+
+bc
+
+it starts a calculator
+
+--
+
+cat data | tr ' ' '\n' | xargs -l3 | tr ' ' '+' | bc
+
+very cool!
+
+--
+
+seq 10 +5 50
+10
+15
+20
+25
+30
+35
+40
+45
+50
+

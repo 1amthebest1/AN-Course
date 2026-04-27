@@ -1,0 +1,44 @@
+
+you can create a file this way too > newFile.txt
+
+---
+
+In Linux, umask (short for user file creation mask) controls the default permissions assigned to newly created files and directories.
+
+🔧 How it works
+
+Whenever you create a file or directory, Linux starts with default base permissions and then subtracts the umask value.
+
+Default file permission: 666 (rw-rw-rw-)
+Default directory permission: 777 (rwxrwxrwx)
+
+👉 Formula:
+
+Final permission = Default permission - umask
+📌 Example
+
+If your umask is:
+
+022
+
+Then:
+
+Files: 666 - 022 = 644 → rw-r--r--
+Directories: 777 - 022 = 755 → rwxr-xr-x
+
+So:
+
+Owner → full access
+Group & others → read + execute (for directories), read only (for files)
+🔍 Checking your umask
+
+Run:
+
+umask
+✏️ Setting umask
+umask 027
+
+This would give:
+
+Files → 640
+Directories → 750

@@ -1,0 +1,60 @@
+
+ps #shows processes.
+
+==
+ps flags
+==
+
+s [sleeping]
+
+r [running]
+
+z [zombie]
+
+==
+
+AI Overview
+TTY stands for
+teletypewriter (or teletype), a term originating from early electromechanical teleprinters used as user interfaces for mainframes. In Linux, it refers to terminal devices, including virtual consoles (/dev/tty1) and pseudo-terminals (/dev/pts/*) used for command-line interaction.
+
+==
+
+top #shows the top processes.
+
+==
+
+jobs # i think this should show cronjobs
+
+==
+
+kill command TRIES to kill the processes.
+
+==
+
+pstree #shows processes in tree form.
+
+==
+
+vmstat #shows which processes are taking how much memory
+
+==
+
+printenv # i think it shows the envirnment variables ETC.
+
+== 
+
+printenv variableName #prints the value for that variable
+
+==
+
+set #without any arguments also shows the env variables
+
+==
+
+alias without any argument shows the currently set aliases.
+
+==
+
+
+alias commandName = newCommand
+

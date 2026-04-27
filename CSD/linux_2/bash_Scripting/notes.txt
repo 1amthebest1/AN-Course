@@ -1,0 +1,26 @@
+
+#!/bin/bash
+
+this is referred to as the shebang line.
+
+-> shebang only matters when you run it via ./ (the path) and not with sh file.
+
+-----------
+
+echo $varname #outputs the data in that variable.
+
+-----------
+
+chown -R <user>:<group> <directoryNameHere>
+
+-----------
+
+/etc/shells	#it shows you the shells
+
+-----------
+
+chsh	#stands for change shell
+
+-----------
+
+you can see the default shell in /etc/passwd

@@ -1,0 +1,78 @@
+df: disk file (shows the disk space under use)
+
+free: shows free memory
+
+--
+
+mkdir dir1 dir2 dir3 #makes multiple directors in a single command.
+
+--
+
+which command helps us view tha path of something
+
+--
+
+with "man", you can enter a manual help stuff for commands.
+
+i think "whatis" like "man".
+
+">" is used to write to a file
+
+--
+
+ls . ..
+.:
+notes.txt  README
+
+..:
+elasticSearch  linux  linux_2  TIME_STAMP  which_VideosToWatch  whyThisCourse
+
+--
+
+sort #this util sorts data
+
+--
+
+uniq #this util gives uniq data (removes duplicates)
+
+--
+
+wc #tells word count.
+
+--
+
+head -n 5 (shows first five rows)
+
+--
+
+tail -n 10 (shows last five rows)
+
+--
+
+tail -f #starts a process, that shows real time logs.
+
+--
+
+/var/log/messages #shows logs of the box...!?
+
+--
+
+inside shell, a specific process that explains how text is being written is call expansion...?
+
+--
+
+echo hi
+
+$sharky hi
+
+--
+
+echo *
+
+--
+
+echo D* #lists everything starting with D
+
+--
+
+echo $((2+2)) # i think this uses a subshell.

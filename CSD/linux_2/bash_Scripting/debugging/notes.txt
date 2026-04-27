@@ -1,0 +1,60 @@
+
+read #it opens a reading stream for input
+
+read -p "Hello" #it creates a prompt on the screen
+
+read -n1 # "I think it reads upto one charachter from the stream"
+
+read #it normally reads one line until enter is pressed
+
+---
+
+Debugging mode gets enabled, only when you do "set the -x flag"
+
+It gets disabled when you do "set the +x flag"
+
+---
+
+bash -x ./file.sh #runs the file in debugging mode
+
+#it tells you where error occurs when a line execution fails, like a compiler 
+
+---
+
++ → normal command execution level
+++ → one level deeper (typically inside command substitution or a subshell)
++++ → even deeper nesting
+
+---
+
+TASK:
+
+#!/bin/bash
+
+echo "My current directory is :" $(pwd);
+
+cd /home/abdeali
+
+echo "My changed directory is: " $(pwd);
+
+cd /home/abdeali
+
+---
+
+-> make your current dierctory change after the exection.
+
+---
+
+echo $$ [it shows the PID of your current shell]
+
+echo $PID [it shows the PID of your current shell]
+
+---
+
+tty is basically the terminal your shell is connected to show input, and output on the terminal
+
+---
+
+default shell for daemon
+
+/usr/sbin/nologin
