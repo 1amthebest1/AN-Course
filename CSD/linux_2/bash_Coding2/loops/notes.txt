@@ -24,4 +24,19 @@ done
 
 =====
 
+touch file{1..10}	#it creates 10 files, file1, file2 file3...
 
+=====
+
+for {1..10..2} // 1 to 10, it adds 2.
+
+=====
+
+for ((var=1; var <=5; v++))
+do
+	echo $var
+done
+
+=====
+
+if [[ -x file ]] #it checks if file has executable permissions
