@@ -1,0 +1,32 @@
+
+echo $? #it shows the exit status of the previous command. 0 for success.
+
+--
+
+["abc" == "def"]; echo $? #if you get 1 means false, so its exit status, and not boolean
+
+you can use !, and ==, but you have to use -gt -lt -ge
+
+--
+#if else syntax
+
+if(condition)
+then
+	statement
+else
+	statement
+fi
+
+--
+
+echo $$
+
+it shows the shell PID(verify this)
+
+--
+
+if --> has "then" and "fi"
+
+else --> has no "then" and no "fi"
+
+elif --> has "then" but no "fi" 

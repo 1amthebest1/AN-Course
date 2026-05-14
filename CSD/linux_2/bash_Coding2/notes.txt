@@ -1,0 +1,71 @@
+---
+Positional parameter
+---
+
+$0 --> program/script name
+
+bash hello.sh
+Hello, World!
+hello.sh
+
+```
+echo "Hello, World!"
+echo $0
+```
+
+---
+
+$1..$9 --> parameters
+
+---
+
+$# --> Counts the total number of parameters passed.
+
+---
+
+```
+bash argCount.sh king queen prince
+This is positional parameter example script echo argCount.sh
+Hello my name is king
+Here is queen
+This is prince
+Total count value 3
+```
+
+#!/bin/bash
+echo "This is positional parameter example script" echo $0
+echo "Hello my name is "$1
+echo "Here is "$2
+echo "This is "$3
+echo "Total count value "$#
+
+---
+
+$# Number of arguments
+$* All arguments combined
+"$*" All args as one string
+"$@" All args as separate strings
+
+---
+
+$$ PID of current shell
+
+$? Exit status
+
+---
+
+service is a background process, like a web-server, a database server
+
+systemctl is manager of services
+
+```
+If your web server isn’t running, you might use:
+
+systemctl start nginx
+
+Then check:
+
+systemctl status nginx
+```
+
+

@@ -1,0 +1,27 @@
+
+=====
+
+Intro to loops hmm...
+
+- For Loop
+
+- While Loop
+
+- Until Loop
+
+- Select Case Loop
+
+=====
+
+-> For Loop Syntax 
+
+
+For var in list
+
+do
+	echo "hi"
+done
+
+=====
+
+
