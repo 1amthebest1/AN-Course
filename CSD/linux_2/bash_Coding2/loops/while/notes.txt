@@ -1,0 +1,63 @@
+
+while condition
+
+do
+
+	statement
+done
+
+----
+
+while true
+
+do
+	echo "Alnafi"
+	echo "*****"
+done
+
+
+======================
+
+#!/bin/bash
+start=1
+while [[ $start -le 10 ]]
+do
+echo "Alnafi : $start"
+((start++))
+
+done
+
+======================
+
+#!/bin/bash
+file="filename" 
+while read line
+do
+	echo line
+done < file
+
+======================
+
+#!/bin/bash
+
+cat file.txt | while read line
+do
+	echo $line
+done
+
+======================
+
+IFS: Internal Field Separator
+
+like comma in CSV
+
+======================
+
+while IFS="Separator" read var1 var2 var3
+do
+	statement
+done < file
+
+======================
+
+default IFS is space.

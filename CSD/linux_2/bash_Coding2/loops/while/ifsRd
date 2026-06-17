@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while IFS="," read var1
+do
+	echo $var1
+done < csvf
