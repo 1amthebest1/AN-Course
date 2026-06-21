@@ -1,0 +1,74 @@
+
+--
+echo flags
+--
+
+you create env variables simply via
+
+```var=1```
+
+--
+
+-e interprets backslash escape \n, \r etc
+
+--
+
+backslash before $, makes it interpet the $ as a charachter
+
+--
+
+\b is a single backspace
+
+\c cut
+
+\f clear screen
+
+--
+
+cat > mam << EOF
+> cool
+> nice
+> EOF
+
+--
+
+tr [a-z] [A-Z] uses the Unix tr (translate) command to convert lowercase letters to uppercase.
+
+Example:
+
+echo "hello world" | tr [a-z] [A-Z]
+
+Output:
+
+HELLO WORLD
+How it works
+tr reads characters from standard input.
+[a-z] is the source character set (lowercase letters).
+[A-Z] is the destination character set (uppercase letters).
+Each character is translated positionally:
+
+--
+
+tr [a-z] [A-Z] << yo
+> asa
+> yo
+ASA
+tr [a-z] [A-Z] <<< "bhenchod gym jao"
+BHENCHOD GYM JAO
+
+--
+
+<< EOF
+
+this is in a multi line comment
+
+
+EOF
+
+--
+
+: "
+
+This is also in a multi line comment
+
+"

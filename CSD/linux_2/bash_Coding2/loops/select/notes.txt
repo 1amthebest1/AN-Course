@@ -1,0 +1,20 @@
+
+used for menu driven programs
+
+---
+Syntax
+---
+
+case <variable> in 
+	pattern
+		statement
+	;;
+	
+	pattern
+		statement
+	;;
+
+	*)
+
+fi
+	

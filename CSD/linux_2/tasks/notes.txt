@@ -1,0 +1,29 @@
+└─$ read
+yo mama
+
+┌──(sharky㉿Pikachu)-[~/stuff____/inProgress/alNafi/alNafi/CSD/linux_2/tasks]
+└─$ echo $REPLY
+yo mama
+
+
+----
+
+
+─$ read som so1 seq
+q as d
+
+┌──(sharky㉿Pikachu)-[~/stuff____/inProgress/alNafi/alNafi/CSD/linux_2/tasks]
+└─$ echo $som
+q
+
+----
+
+└─$ read in1 in2 in3
+yo \
+> are \
+> cool
+
+┌──(sharky㉿Pikachu)-[~/stuff____/inProgress/alNafi/alNafi/CSD/linux_2/tasks]
+└─$ echo $in3
+cool
+

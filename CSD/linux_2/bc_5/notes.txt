@@ -1,0 +1,4 @@
+
+soo...
+
+when vars are being used without $, its mostly for assignment

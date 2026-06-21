@@ -1,0 +1,9 @@
+#!/bin/bash
+for i in $(seq 1 10)
+do
+	if [[ $i -eq 5 ]]
+	then
+		continue
+	fi
+	echo $i
+done

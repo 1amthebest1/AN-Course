@@ -1,0 +1,40 @@
+
+---
+shift position parameter
+---
+
+---
+$# #total number of parameters
+---
+
+---
+shift, it removes the first argument i.e the $1
+---
+
+---
+shift (count), skips the arguments equal to the count
+---
+
+---
+$? exit status
+---
+
+DIFF b/w $@ and $* [occurs only with double quotes]
+
+$* puts all the arguments into one variable
+
+$@ puts every argument into a separate variable
+
+---
+
+Suppose:
+
+./script.sh "a b" c d
+
+| Expression | Expands to                        |
+| ---------- | --------------------------------- |
+| `$*`       | `a b c d`                         |
+| `$@`       | `a b c d`                         |
+| `"$*"`     | `"a b c d"` (one argument)        |
+| `"$@"`     | `"a b" "c" "d"` (three arguments) |
+
