@@ -1,0 +1,51 @@
+m=s creates a shell-local variable stored inside the shell process, so env won't show it. Use set/declare to see it, or export m=s if you want it in the environment.
+
+
+$(), same as ``
+
+----
+
+Quick mental model
+$(...)
+
+→ "Run this command."
+
+${...}
+
+→ "Use or manipulate this variable."
+
+Examples:
+
+user="bob"
+
+echo "${user}"      # variable expansion
+echo "$(whoami)"    # command substitution
+
+----
+
+${#yourvar} #it gives the length of the variable
+
+----
+
+└─$ echo ${#MESSAGE}
+16
+
+----
+
+echo ${variable^^} #the variable becomes uppercase
+
+echo ${variable,,} #the variable becomes lowercase
+
+| tr [a-z] [A-Z], makes it uppercase
+
+----
+
+echo ${variable/whattoreplace/thethingtoreplacewith} #doesn't update the var, just replaces it in echo
+
+echo ${variable/the_thing_to_not_show_in_echo}
+
+echo ${variable:0:2} #shows from 0 to 2
+
+echo ${var::-1} //removes last
+
+indexing is ... 3 2 1 0 in case of ${var::any number} 
