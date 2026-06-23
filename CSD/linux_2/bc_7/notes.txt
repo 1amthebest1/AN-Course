@@ -1,0 +1,49 @@
+---
+syntax
+---
+
+abd=(5 2 3 abdeali)
+
+echo $(abd[2])
+
+---
+
+indexing of negative moves from right to left
+
+-4 -3 -2 -1
+
+---
+
+echo ${arr[*]:2} #shows from second index
+
+echo ${arr[*]:1:3} #shows from 1 to 2 index
+
+---
+echo ${#arry[*]} #shows the total number of values in the array
+---
+
+echo ${!arry[*]} #shows the total indexes
+
+0 1 2 3 ...
+
+---
+
+read -a $var #the -a stores the input in an array
+
+---
+
+test=([key]=val [key2]=val2)
+
+---
+
+you need to do
+
+declare -A var
+
+to use non integer values as indices to be visible as non integer values
+
+---
+
+the only difference is that when you do ${!arr}, it will show the non integer keys, even though the other thing can use non integer keys
+
+I think use non int keys without doing declare -A, might cause weird behaviour/bugs
