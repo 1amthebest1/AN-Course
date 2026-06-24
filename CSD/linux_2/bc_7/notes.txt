@@ -47,3 +47,7 @@ to use non integer values as indices to be visible as non integer values
 the only difference is that when you do ${!arr}, it will show the non integer keys, even though the other thing can use non integer keys
 
 I think use non int keys without doing declare -A, might cause weird behaviour/bugs
+
+---
+
+git -A, string smjhta ha
