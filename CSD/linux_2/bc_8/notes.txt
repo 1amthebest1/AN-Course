@@ -1,0 +1,47 @@
+--
+Methods to declare functions in bash
+--
+
+1- function functionName(){}
+
+2- function{}
+
+----
+#!/bin/bash
+test
+{
+echo "rawr"
+}
+
+
+#weird, its kind of erroring out if i put any other name instead of test
+
+----
+CORRECT IS THIS WAY
+
+#!/bin/bash
+tests_()
+{
+        echo "rawr"
+}
+tests_
+----
+
+very weird, the variables declared inside functions can be accessed outside
+
+so i think locals are only declared when the local keyword is used.
+
+ahh, the globals inside functions only become accessible when the function is called (makes sense)
+
+--
+
+
+command not found, error status 127
+
+successful execution status 0
+
+--
+
+if a function is returning something, that should be visible via echo $?
+
+there is a max size limit of int in exit status.
