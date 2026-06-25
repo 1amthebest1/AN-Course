@@ -1,0 +1,416 @@
+====
+----
+
+grep "b" test.txt
+My name is B4k3r I am learning cyber security ?? hmm...sus behaviour
+
+----
+====
+
+grep -i "ignore case"
+
+----
+
+grep basically finds matching things, and highlights the whole line containing the match.
+
+----
+grep -w "match word"
+
+----
+
+grep -v "selects non-matching LINES"
+
+----
+
+ -o, --only-matching       show only nonempty parts of lines that match
+
+----
+
+-c #prints the count of the matches
+
+----
+
+grep -A N pattern file → show N lines after matches.
+grep -B N pattern file → show N lines before matches.
+grep -C N pattern file → show N lines before and after matches.
+
+----
+
+grep -r "TODO" .
+
+This searches for "TODO" in all files under the current directory and its subdirectories.
+
+----
+
+-l #print filenames, containing this word present
+
+grep -rl "b" *
+mam.txt
+notes.txt
+test.txt
+yo/test.txt
+
+
+-r means recursive, if a folder gets found, it reads the files in that folder to find matching word present  in that folder
+
+
+----
+
+-h tells grep to suppress filenames in the output.
+
+Normally, when searching multiple files, grep prefixes each matching line with the filename:
+
+grep "error" *.log
+
+Output:
+
+app.log:error occurred
+server.log:error occurred
+
+With -h:
+
+grep -h "error" *.log
+
+Output:
+
+error occurred
+error occurred
+
+The filenames are omitted.
+
+----
+
+
+-e lets you specify a pattern explicitly. It's mainly useful when:
+
+You want multiple patterns.
+Your pattern starts with - (so grep doesn't mistake it for an option).
+Multiple patterns
+ app.log
+
+----
+
+-E enables extended regular expressions, allowing operators like |, +, ?, and () without escaping them. Example:
+?s
+
+----
+
+-f tells grep to read patterns from a file instead of from the command line.
+
+Example
+
+Suppose patterns.txt contains:
+
+error
+warning
+fatal
+
+Then:
+
+grep -f patterns.txt logfile.txt
+
+----
+
+grep -E "^error" #line starts with error
+
+----
+
+grep -E 'error$' #line ends with error
+
+----
+
+^ #start of line
+$ #end of line
+
+^error$ matches line with this only
+
+^$ nothing is allowed, so empty lines
+
+----
+
+grep "."
+
+Here . means any single character.
+
+So this matches any line containing at least one character:
+
+hello      ✓
+123        ✓
+.          ✓
+           ✗  (empty line)
+
+
+----
+
+grep "\."
+grep "\."
+
+Here \. escapes the dot, so it means a literal period character.
+
+Matches:
+
+hello.txt  ✓
+version 1.0 ✓
+.          ✓
+hello      ✗
+
+
+----
+
+grep "i."
+
+means:
+
+Find i followed by any single character.
+
+Because:
+
+i = literal letter i
+sit
+
+Doesn't match
+i
+I
+abc
+
+because there isn't an i followed by another character.
+
+----
+
+In basic grep (default GNU grep)
+
+\b means a word boundary.
+
+So:
+
+grep '\bsomething\b' file.txt
+
+matches something as a whole word.
+
+Matches:
+
+something
+the something is here
+
+Does not match:
+
+somethingelse
+mysomething
+
+because there is no word boundary on both sides.
+
+A word boundary is the position between:
+
+a word character (a-z, A-Z, 0-9, _)
+and a non-word character (space, punctuation, start/end of line, etc.)
+Examples
+something.      ✓
+(something)     ✓
+something!      ✓
+something_else  ✗
+
+The last one fails because _ is considered a word character.
+
+----
+
+
+More useful examples
+grep -E "hi?"
+
+Matches:
+
+h
+hi
+hat
+hello
+
+because:
+
+h + optional i
+
+
+----
+
+grep -E "hi*"
+
+means:
+
+Match h followed by zero or more i characters.
+
+
+----
+
+grep -E "in+"
+
+means:
+
+Match i followed by one or more n characters.
+
+Because:
+
+i = literal i
+n+ = n, nn, nnn, ...
+Matches
+in
+inn
+innn
+
+Examples:
+
+find
+inner
+winning
+
+Matches:
+
+find → in
+inner → inn
+winning → inn
+Doesn't match
+it
+is
+ion
+
+because there is no i followed by at least one n.
+
+----
+
+
+grep -E "[Iio]"
+
+[Iio] is a character class.
+
+It means:
+
+Match exactly one character that is either I, i, or o.
+
+Matches
+I
+i
+o
+
+And inside words:
+
+Hello    ✓ (contains o)
+India    ✓ (contains I)
+bird     ✓ (contains i)
+Doesn't match
+cat
+xyz
+123
+
+because none of those contain I, i, or o.
+
+----
+
+[a]r is equivalent to ar.
+A character class with a single character is redundant.
+You'll occasionally see [x] used as a shell/grep trick to avoid matching the grep command itself (e.g. [n]ginx).
+
+----
+
+{N} n times
+
+{N} is a repetition operator.
+
+It means:
+
+Match the preceding pattern exactly N times.
+
+baaa
+
+----
+
+{5,7} means:
+
+Match the preceding pattern at least 5 times and at most 7 times.
+
+Single character
+grep -E 'a{5,7}'
+
+
+----
+
+
+[0-9]
+grep -E '[0-9]'
+
+[0-9] is a character class range.
+
+It means:
+
+Match exactly one character that is any digit from 0 through 9.
+
+Equivalent to:
+
+[0123456789]
+
+but much shorter.
+
+Matches
+0
+5
+9
+
+and lines containing digits:
+
+abc123
+version2
+room 42
+
+because they contain at least one digit.
+
+Doesn't match
+hello
+abc
+XYZ
+
+because there are no digits.
+
+Common combinations
+One or more digits
+grep -E '[0-9]+'
+
+Matches:
+
+1
+42
+12345
+Exactly 4 digits
+grep -E '^[0-9]{4}$'
+
+Matches:
+
+2026
+1234
+
+Not:
+
+123
+12345
+abc1234
+Letter followed by a digit
+grep -E '[A-Z][0-9]'
+
+Matches:
+
+A1
+X7
+POSIX equivalent
+
+You may also see:
+
+[[:digit:]]
+
+which is equivalent to:
+
+[0-9]
+
+in most cases.
+
+TL;DR:
+[0-9] matches a single digit (0 through 9). It's one of the most common character classes and is often combined with +, *, or {n}:
+
+[0-9] → one digit
+[0-9]+ → one or more digits
+[0-9]{4} → exactly four digits.

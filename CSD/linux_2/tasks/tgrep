@@ -1,0 +1,42 @@
+
+grep "https?://[a-z]+\.[a-z]+"
+
+
+----
+
+| Regex      | Meaning                      | Matches                        | Example                        |
+| ---------- | ---------------------------- | ------------------------------ | ------------------------------ |
+| `.`        | Any character except newline | `a`, `1`, `@`                  | `c.t` → `cat`, `cut`           |
+| `\d`       | Any digit                    | `0-9`                          | `\d\d` → `42`                  |
+| `\D`       | Any non-digit                | `a`, `#`, space                | `\D+` → `abc`                  |
+| `\w`       | Word character               | `a-z`, `A-Z`, `0-9`, `_`       | `\w+` → `hello_123`            |
+| `\W`       | Non-word character           | `@`, `-`, space                | `\W+` → `!!!`                  |
+| `\s`       | Whitespace                   | space, tab, newline            | `\s+` → `"   "`                |
+| `\S`       | Non-whitespace               | `a`, `1`, `@`                  | `\S+` → `hello`                |
+| `[abc]`    | One character from the set   | `a`, `b`, `c`                  | `[aeiou]` → `a`                |
+| `[^abc]`   | One character not in the set | anything except `a`, `b`, `c`  | `[^0-9]` → `x`                 |
+| `[a-z]`    | One lowercase letter         | `a` to `z`                     | `[a-z]+` → `hello`             |
+| `[A-Z]`    | One uppercase letter         | `A` to `Z`                     | `[A-Z]+` → `USA`               |
+| `[0-9]`    | One digit                    | `0` to `9`                     | `[0-9]{4}` → `2026`            |
+| `[A-Za-z]` | One letter                   | `a-z`, `A-Z`                   | `[A-Za-z]+` → `OpenAI`         |
+| `x*`       | Zero or more `x`s            | `""`, `x`, `xxx`               | `ab*c` → `ac`, `abc`           |
+| `x+`       | One or more `x`s             | `x`, `xx`                      | `ab+c` → `abc`, `abbc`         |
+| `x?`       | Zero or one `x`              | `""`, `x`                      | `colou?r` → `color`, `colour`  |
+| `x{n}`     | Exactly `n` times            | fixed repetitions              | `\d{4}` → `2026`               |
+| `x{n,}`    | At least `n` times           | `n` or more                    | `a{2,}` → `aa`, `aaa`          |
+| `x{n,m}`   | Between `n` and `m` times    | bounded repetitions            | `\d{2,4}` → `12`, `1234`       |
+| `^`        | Start of line/string         | beginning only                 | `^Hello`                       |
+| `$`        | End of line/string           | end only                       | `world$`                       |
+| `\b`       | Word boundary                | edge of a word                 | `\bcat\b` → matches `cat` only |
+| `\B`       | Not a word boundary          | inside words                   | `\Bcat\B` → `concatenate`      |
+| `(...)`    | Capturing group              | stores matched text            | `(ab)+` → `abab`               |
+| `(?:...)`  | Non-capturing group          | groups without storing         | `(?:ab)+`                      |
+| `x\|y`     | Alternation (OR)             | `x` or `y`                     | `cat\|dog`                     |
+| `\`        | Escape special character     | treats special chars literally | `\.` → `.`                     |
+| `\.`       | Literal dot                  | `.`                            | `file\.txt`                    |
+| `\*`       | Literal asterisk             | `*`                            | `\*` → `*`                     |
+| `\+`       | Literal plus sign            | `+`                            | `C\+\+` → `C++`                |
+| `\?`       | Literal question mark        | `?`                            | `what\?`                       |
+| `\(` `\)`  | Literal parentheses          | `(` and `)`                    | `\(test\)`                     |
+| `\[` `\]`  | Literal brackets             | `[` and `]`                    | `\[abc\]`                      |
+
