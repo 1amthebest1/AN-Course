@@ -1,0 +1,164 @@
+A cron job is a scheduled task in Linux and Unix systems. It's like telling your computer:
+
+"Run this command automatically at a specific time or interval."
+
+The service that executes these scheduled tasks is called cron, and the list of scheduled tasks is stored in a crontab (cron table).
+
+Crontab Format
+
+Each line in a crontab follows this format:
+
+* * * * * command_to_run
+│ │ │ │ │
+│ │ │ │ └── Day of week (0-7) (Sunday = 0 or 7)
+│ │ │ └──── Month (1-12)
+│ │ └────── Day of month (1-31)
+│ └──────── Hour (0-23)
+└────────── Minute (0-59)
+
+Example:
+
+30 14 * * * /home/user/backup.sh
+
+This means:
+
+Minute: 30
+Hour: 14 (2 PM)
+Day of month: * (every day)
+Month: * (every month)
+Day of week: * (every day of the week)
+
+Runs every day at 2:30 PM.
+
+Special Characters
+Asterisk (*)
+
+Means "every".
+
+* * * * *
+
+Runs every minute.
+
+Comma (,)
+0 9,17 * * *
+
+Runs at 9:00 AM and 5:00 PM.
+
+Dash (-)
+0 9-17 * * *
+
+Runs every hour from 9 AM through 5 PM.
+
+Slash (/)
+*/15 * * * *
+
+Runs every 15 minutes:
+
+00,15,30,45
+Reading Examples
+0 0 * * *
+
+→ Every day at midnight.
+
+0 8 * * 1-5
+
+→ Every weekday at 8:00 AM.
+
+*/10 * * * *
+
+→ Every 10 minutes.
+
+15 3 1 * *
+
+→ At 3:15 AM on the 1st day of every month.
+
+0 */2 * * *
+
+→ Every 2 hours.
+
+How to View Your Cron Jobs
+
+Show your current user's cron jobs:
+
+crontab -l
+
+Edit your cron jobs:
+
+crontab -e
+
+Remove all cron jobs:
+
+crontab -r
+Set a Cron Job That Runs Every Hour
+
+Open the crontab:
+
+crontab -e
+
+Add:
+
+0 * * * * /path/to/script.sh
+
+This means:
+
+Minute: 0
+Hour: every hour
+Day: every day
+Month: every month
+Weekday: every weekday
+
+It runs at:
+
+01:00
+02:00
+03:00
+...
+23:00
+00:00
+Example
+
+Suppose you have:
+
+/home/ubuntu/backup.sh
+
+Make it executable:
+
+chmod +x /home/ubuntu/backup.sh
+
+Then add:
+
+0 * * * * /home/ubuntu/backup.sh
+
+Cron will execute it at the beginning of every hour.
+
+Redirect Output to a Log File
+0 * * * * /home/ubuntu/backup.sh >> /var/log/backup.log 2>&1
+>> appends standard output to the log.
+2>&1 redirects errors into the same log file.
+Useful Cron Shortcuts
+@reboot    Run once after boot
+@hourly    Run every hour
+@daily     Run once a day
+@weekly    Run once a week
+@monthly   Run once a month
+@yearly    Run once a year
+
+Your hourly job could also be written as:
+
+@hourly /home/ubuntu/backup.sh
+TL;DR
+Cron = Linux scheduler for automatic tasks.
+Crontab line format:
+minute hour day-of-month month day-of-week command
+* means "every".
+Edit cron jobs with:
+crontab -e
+View them with:
+crontab -l
+Run a script every hour:
+0 * * * * /path/to/script.sh
+
+or:
+
+@hourly /path/to/script.sh
+Make scripts executable and preferably log their output for debugging.

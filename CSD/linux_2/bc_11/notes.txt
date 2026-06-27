@@ -1,0 +1,148 @@
+
+awk options
+
+-F : field separators
+
+-f : file name
+
+----
+
+awk pattern {action}
+
+Examples:
+
+awk '/apple/' file.txt
+
+Equivalent to:
+
+awk '/apple/ { print }' file.txt
+
+Prints lines containing apple.
+
+awk '{print $1}'
+
+Prints the first field of every line.
+
+----
+
+$0	The entire line	Alice 25 Engineer
+$1	First field	Alice
+$2	Second field	25
+$3	Third field	Engineer
+$NF	Last field	Engineer
+NF	Number of fields 3
+
+
+----
+
+echo 'Alice 25 Engineer' | awk '{$2 = 26; print}'
+
+Output:
+
+Alice 26 Engineer
+
+Other useful built-in variables:
+
+NR – current record (line) number
+FNR – line number within the current file
+FS – input field separator (default: whitespace)
+OFS – output field separator (default: space)
+
+----
+
+command | awk '
+BEGIN { initialization }
+pattern { action }
+END { cleanup }
+'
+
+----
+
+chmod +x simple.awk
+./simple.awk
+ simple.awk
+
+----
+
+Pattern Search
+awk '/alnafi/ {print $0}'
+What?
+
+Search for word:
+
+alnafi
+How?
+
+Regex pattern matching.
+
+$0 means entire line.
+
+Why?
+
+Extract matching records.
+
+----
+
+awk '{if ($1 >=10 && $1 <=30) print $1}'
+
+awk 'BEGIN {for(i=1;i<=10;i++) print "The number",i}'
+
+----
+
+$0	Entire line
+$1	First field
+$2	Second field
+$NF	Last field
+NR	Record number
+NF	Number of fields
+BEGIN	Execute before input
+END	Execute after input
+-F	Input separator
+OFS	Output separator
+-f	Read script file
+-v	Pass variable
+print	Simple output
+printf	Formatted output
+&&	Logical AND
+if	Conditional statement
+for	Count-controlled loop
+while	Condition-controlled loop
+>	Redirect output
+`
+
+Input
+   ↓
+Read one line
+   ↓
+Split into fields
+   ↓
+Check pattern/condition
+   ↓
+Execute action
+   ↓
+Go to next line
+   ↓
+END block
+
+
+----
+
+| Option     | Meaning                      |
+| ---------- | ---------------------------- |
+| `.`        | Current directory            |
+| `-name`    | Search by name               |
+| `-type f`  | Regular files                |
+| `-type d`  | Directories                  |
+| `-user`    | Owner                        |
+| `-group`   | Group owner                  |
+| `-perm`    | Permissions                  |
+| `-size`    | File size                    |
+| `-mtime`   | Modified days ago            |
+| `-mmin`    | Modified minutes ago         |
+| `-cmin`    | Metadata changed minutes ago |
+| `-newermt` | Newer than date              |
+| `-exec`    | Execute command              |
+| `{}`       | Current matched file         |
+| `\;`       | End of `-exec` command       |
+| `-print`   | Print matches                |
+
